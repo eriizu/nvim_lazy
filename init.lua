@@ -1,0 +1,2 @@
+require("eriizu")
+print("hello")
