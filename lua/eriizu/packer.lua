@@ -16,4 +16,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { "ellisonleao/gruvbox.nvim" }
+  use 'phanviet/vim-monokai-pro'
+  use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}}
+  use 'sainnhe/sonokai'
 end)

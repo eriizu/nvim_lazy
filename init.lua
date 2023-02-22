@@ -1,2 +1,1 @@
 require("eriizu")
-print("hello")
