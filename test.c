@@ -6,11 +6,18 @@ struct patate {
 	int a;
 	int b;
 };
-
-int main(void)
+int main(int ac,
+         char **av,
+         char **envp)
 {
 	struct patate fifi;
+	int i;
 
+	i = 0;
+	while (envp[i]
+         && 1) {
+		puts(envp[i++]);
+	}
 	fifi.a = 12;
 	fifi.b = 666;
 	char *str1;
