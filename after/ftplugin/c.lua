@@ -8,4 +8,4 @@ vim.opt_local.tabstop = 2
 vim.opt_local.expandtab = true
 vim.opt_local.smarttab = true
 vim.opt_local.cindent = true
-vim.opt_local.cinoptions = "(0,+0"
+vim.opt_local.cinoptions = "(0"
