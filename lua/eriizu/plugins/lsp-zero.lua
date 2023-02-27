@@ -38,4 +38,11 @@ lsp.setup_nvim_cmp({
   },
 })
 
+lsp.skip_server_setup({'rust_analyzer'})
+
 lsp.setup()
+
+-- Initialize rust_analyzer with rust-tools
+local rust_lsp = lsp.build_options('rust_analyzer', {})
+require('rust-tools').setup({server = rust_lsp})
+

@@ -2,7 +2,7 @@ local theme = require('lualine.themes.base16')
 
 require('lualine').setup {
   options = {
-    icons_enabled = true,
+    icons_enabled = false,
     theme = theme,
     component_separators = { left = ' ', right = ' '},
     section_separators = { left = ' ', right = ' '},
@@ -12,7 +12,7 @@ require('lualine').setup {
     },
     ignore_focus = {},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,
