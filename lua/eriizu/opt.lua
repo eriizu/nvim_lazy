@@ -1,0 +1,10 @@
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = false
+vim.opt.backspace = "indent,eol,start"
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.list = true
+vim.opt.listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←"
+vim.opt.wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**"
+vim.g.mapleader = " "
