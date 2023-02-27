@@ -1,3 +1,5 @@
 vim.keymap.set("n", "<leader>fd", vim.cmd.Ex)
 vim.keymap.set({'n', 'x'}, 'cp', '"+y')
 vim.keymap.set({'n', 'x'}, 'cv', '"+p')
+vim.keymap.set({'n', 'x'}, '<leader>bn', ":bNext<enter>")
+vim.keymap.set({'n', 'x'}, '<leader>bp', ":bprevious<enter>")
