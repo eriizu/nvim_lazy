@@ -46,4 +46,6 @@ return require('packer').startup(function(use)
   }
   use 'simrat39/rust-tools.nvim'
   use 'gpanders/editorconfig.nvim'
+  use 'sbdchd/neoformat'
+  use 'mfussenegger/nvim-dap'
 end)

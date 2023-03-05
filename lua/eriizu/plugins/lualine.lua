@@ -1,4 +1,4 @@
-local theme = require('lualine.themes.base16')
+local theme = require('lualine.themes.sonokai')
 
 require('lualine').setup {
   options = {
@@ -22,10 +22,10 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename', 'filetype'},
-    lualine_x = {'buffers'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_c = {{'filename', file_status = true, path = 1}},
+    lualine_x = {'location', 'progress'},
+    lualine_y = {'filetype'},
+    lualine_z = {'mode'}
   },
   inactive_sections = {
     lualine_a = {},

@@ -1,17 +1,23 @@
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 struct patate {
     int a;
     int b;
 };
-int main(int ac,
-         char **av,
-         char **envp)
+
+int func_with_long_name_and_loads_of_params(int hello, int my_name_is,
+                                            int mario)
+{
+    return (hello * my_name_is * mario);
+}
+
+int main(int ac, char **av, char **envp)
 {
     struct patate fifi;
     int i;
+    int len;
 
     i = 0;
     while (envp[i] && 1) {
@@ -22,5 +28,6 @@ int main(int ac,
     char *str1;
     str1 = malloc(sizeof(char) * 10);
     strcpy(str1, "hello");
-    return strlen(str1);
+    len = strlen(str1);
+    return len;
 }
