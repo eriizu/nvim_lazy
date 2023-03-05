@@ -1,0 +1,51 @@
+window:
+  dimensions:
+    columns: 120
+    lines: 30
+#  decorations: none
+#  opacity: 0.975
+  padding:
+    x: 10
+    y: 10
+  # position:
+  #   x: 50
+  #   y: 50
+font:
+  normal:
+    family: "Fira Mono"
+  size: 10
+
+bell:
+  duration: 1
+
+cursor:
+  style:
+#    shape: Underline
+    blinking: on
+  blink_timeout: 0
+
+# Colors (Gruvbox dark)
+colors:
+  primary:
+    background: "0x312c2b"
+    foreground: "0xe4e3e1"
+
+  normal:
+    black: "0x1f1e1c"
+    red: "0xf86882"
+    green: "0xa6cd77"
+    yellow: "0xf0c66f"
+    blue: "0x99c4b8"
+    magenta: "0x9fa0e1"
+    cyan: "0x81d0c9"
+    white: "0xe4e3e1"
+
+  bright:
+    black: "0x90817b"
+    red: "0xf86882"
+    green: "0xa6cd77"
+    yellow: "0xf0c66f"
+    blue: "0x81d0c9"
+    magenta: "0x9fa0e1"
+    cyan: "0xf08d71"
+    white: "0xe4e3e1"
