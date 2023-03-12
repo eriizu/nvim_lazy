@@ -1,0 +1,10 @@
+vim.keymap.set({'n'}, '<leader>dd', ":call vimspector#Launch()<CR>")
+vim.keymap.set({'n'}, '<leader>de', ":call vimspector#Reset()<CR>")
+vim.keymap.set({'n'}, '<leader>dc', ":call vimspector#Continue()<CR>")
+vim.keymap.set({'n'}, '<leader>dt', ":call vimspector#ToggleBreakpoint()<CR>")
+vim.keymap.set({'n'}, '<leader>dT', ":call vimspector#ClearBreakpoints()<CR>")
+
+vim.keymap.set({'n'}, '<leader>dk', ":VimspectorRestart")
+vim.keymap.set({'n'}, '<leader>dh', ":VimspectorStepOut")
+vim.keymap.set({'n'}, '<leader>dl', ":VimspectorStepInto")
+vim.keymap.set({'n'}, '<leader>dj', ":VimspectorStepOver")
