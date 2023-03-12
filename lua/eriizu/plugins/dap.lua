@@ -28,7 +28,6 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 
-
 local dapui = require("dapui")
 local api = vim.api
 local keymap_restore = {}
@@ -43,16 +42,30 @@ dap.listeners.after["event_initialized"]["me"] = function()
         end
     end
     api.nvim_set_keymap("n", "K", '<Cmd>lua require("dap.ui.widgets").hover()<CR>', { silent = true })
---    api.nvim_set_keymap("n", "K", require("dap.ui.widgets").hover, { silent = true })
-    dapui.setup()
+    --    api.nvim_set_keymap("n", "K", require("dap.ui.widgets").hover, { silent = true })
     dapui.open()
 end
 
 dap.listeners.after["event_terminated"]["me"] = function()
-  dapui.close()
+    dapui.close()
     for _, keymap in pairs(keymap_restore) do
         api.nvim_buf_set_keymap(keymap.buffer, keymap.mode, keymap.lhs, keymap.rhs, { silent = keymap.silent == 1 })
     end
     keymap_restore = {}
 end
 
+dapui.setup({
+    controls = {
+        icons = {
+            disconnect = "disconnect",
+            pause = "pause",
+            play = "play",
+            run_last = "re-run",
+            step_back = "back",
+            step_into = "into",
+            step_out = "out",
+            step_over = "over",
+            terminate = "kill",
+        },
+    },
+})
