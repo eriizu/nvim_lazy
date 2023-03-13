@@ -54,18 +54,19 @@ dap.listeners.after["event_terminated"]["me"] = function()
     keymap_restore = {}
 end
 
-dapui.setup({
-    controls = {
-        icons = {
-            disconnect = "disconnect",
-            pause = "pause",
-            play = "play",
-            run_last = "re-run",
-            step_back = "back",
-            step_into = "into",
-            step_out = "out",
-            step_over = "over",
-            terminate = "kill",
-        },
-    },
-})
+-- dapui.setup({
+--     controls = {
+--         icons = {
+--             disconnect = "disconnect",
+--             pause = "pause",
+--             play = "play",
+--             run_last = "re-run",
+--             step_back = "back",
+--             step_into = "into",
+--             step_out = "out",
+--             step_over = "over",
+--             terminate = "kill",
+--         },
+--     },
+-- })
+dapui.setup()
