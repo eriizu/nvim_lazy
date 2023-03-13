@@ -3,7 +3,7 @@ window:
     columns: 120
     lines: 30
 #  decorations: none
-#  opacity: 0.975
+  opacity: 0.95
   padding:
     x: 10
     y: 10
