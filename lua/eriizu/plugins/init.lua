@@ -7,4 +7,11 @@ require("eriizu.plugins.lualine")
 require("eriizu.plugins.dap")
 -- require("eriizu.plugins.wilder")
 -- require("eriizu.plugins.vimspector")
-
+require("fidget").setup({
+    text = {
+        spinner = "dots_bounce"
+    },
+    window = {
+        blend = 0
+    }
+})

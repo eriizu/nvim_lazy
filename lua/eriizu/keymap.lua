@@ -3,7 +3,6 @@ vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
 vim.keymap.set({ "n", "x" }, "<leader>bn", ":bNext<enter>")
 vim.keymap.set({ "n", "x" }, "<leader>bp", ":bprevious<enter>")
-vim.keymap.set({ "n" }, "<leader>a", function() print("transrights") end)
 
 vim.keymap.set("t", "<C-W>", "<C-\\><C-n>")
 
@@ -33,3 +32,4 @@ vim.keymap.set("n", "<Leader>ds", function()
     local widgets = require("dap.ui.widgets")
     widgets.centered_float(widgets.scopes)
 end)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })

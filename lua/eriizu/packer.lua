@@ -53,4 +53,7 @@ return require("packer").startup(function(use)
     -- use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" } })
     use("dpelle/vim-Grammalecte")
     use("ray-x/lsp_signature.nvim")
+    use("j-hui/fidget.nvim")
+    use("arkav/lualine-lsp-progress")
 end)
+
