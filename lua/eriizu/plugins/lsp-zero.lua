@@ -6,9 +6,6 @@ lsp.preset('recommended')
 -- lsp.nvim_workspace()
 
 lsp.configure('lua_ls', {
-  on_attach = function(client, bufnr)
-    print('hello lua!')
-  end,
   settings = {
     Lua = {
       runtime = {
@@ -46,3 +43,12 @@ lsp.setup()
 local rust_lsp = lsp.build_options('rust_analyzer', {})
 require('rust-tools').setup({server = rust_lsp})
 
+require "lsp_signature".setup({
+    hint_prefix = "sig: ",
+    hint_enable = false,
+    doc_lines = 0,
+    floating_window_off_x = 0,
+    handler_opts = {
+        border = "rounded"
+    }
+})
