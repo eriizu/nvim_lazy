@@ -1,8 +1,9 @@
 local theme = require('lualine.themes.sonokai')
 
+theme.normal.a.bg = '#9fa0e1'
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = theme,
     component_separators = { left = ' ', right = ' '},
     section_separators = { left = ' ', right = ' '},
@@ -23,9 +24,9 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {{'filename', file_status = true, path = 1}},
-    lualine_x = {'location', 'progress'},
+    lualine_x = {'progress'},
     lualine_y = {'filetype'},
-    lualine_z = {'mode'}
+    lualine_z = {'location'}
   },
   inactive_sections = {
     lualine_a = {},
