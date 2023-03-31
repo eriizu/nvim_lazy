@@ -1,3 +1,5 @@
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+print("hi from c")
 vim.opt_local.commentstring = "//%s"
 vim.opt_local.autoindent = true
 vim.opt_local.smartindent = true
