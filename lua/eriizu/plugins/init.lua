@@ -16,3 +16,4 @@ require("fidget").setup({
     }
 })
 
+require("symbols-outline").setup()

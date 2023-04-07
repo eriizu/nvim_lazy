@@ -51,7 +51,7 @@ local rust_lsp = lsp.build_options("rust_analyzer", {})
 local extension_path = vim.env.HOME .. "/.local/share/nvim/codelldb/extension/"
 local codelldb_path = extension_path .. "adapter/codelldb"
 local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-print(codelldb_path)
+--print(codelldb_path)
 require("rust-tools").setup({
     server = rust_lsp,
     tools = {
