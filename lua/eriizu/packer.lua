@@ -22,7 +22,7 @@ return require("packer").startup(function(use)
     use({
         "VonHeikemen/lsp-zero.nvim",
         branch = "v1.x",
-    requires = {
+        requires = {
             -- LSP Support
             { "neovim/nvim-lspconfig" }, -- Required
             { "williamboman/mason.nvim" }, -- Optional
@@ -57,4 +57,8 @@ return require("packer").startup(function(use)
     use("arkav/lualine-lsp-progress")
     use("folke/neodev.nvim")
     use("simrat39/symbols-outline.nvim")
+    use({
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    })
 end)

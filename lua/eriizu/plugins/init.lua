@@ -9,11 +9,21 @@ require("eriizu.plugins.dap")
 -- require("eriizu.plugins.vimspector")
 require("fidget").setup({
     text = {
-        spinner = "dots_bounce"
+        spinner = "dots_bounce",
     },
     window = {
-        blend = 0
-    }
+        blend = 0,
+    },
 })
 
 require("symbols-outline").setup()
+
+require("todo-comments").setup({
+    signs = true,
+})
+-- FIX:TEST
+-- WARN: TEST
+-- NOTE: A
+-- TODO: dots_bounce
+-- TATA TOTO
+
