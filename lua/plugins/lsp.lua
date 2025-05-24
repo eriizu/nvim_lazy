@@ -166,4 +166,20 @@ return {
 		end,
 		-- ft = "rust",
 	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			hint_prefix = "👉👈 ",
+			hint_enable = false,
+			-- doc_lines = 0,
+			-- floating_window_off_x = 10,
+			handler_opts = {
+				border = "rounded",
+			},
+			-- floating_window_above_cur_line = false,
+			toggle_key = "<M-x>",
+			toggle_key_flip_floatwin_setting = true,
+		},
+	}
 }
