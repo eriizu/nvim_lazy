@@ -16,7 +16,7 @@ end
 return {
 	-- Mason
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		lazy = false,
 		config = function()
 			require("mason").setup()
@@ -25,9 +25,9 @@ return {
 
 	-- Mason-lspconfig
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		lazy = false,
-		dependencies = { "williamboman/mason.nvim" },
+		dependencies = { "mason-org/mason.nvim" },
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = { "lua_ls" },
@@ -44,6 +44,7 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		lazy = false,
+		commit = "458560534a73f7f8d7a11a146c801db00b081df0",
 		config = function()
 			require("luasnip").setup({})
 		end,
@@ -133,7 +134,7 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
