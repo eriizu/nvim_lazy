@@ -28,7 +28,7 @@ return {
 	-- { "simrat39/rust-tools.nvim", enable = false, config = rst_config, ft = { "rust", "rs" } },
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4", -- Recommended
+		version = "^6", -- Recommended
 		lazy = false, -- This plugin is already lazy
 		config = function()
 			vim.g.rustaceanvim = {
