@@ -1,6 +1,34 @@
 -- INFO: shows symbols outline in a side window
 -- tags: UI, IDE
 
+local icons = {
+  File          = "[FIL]",
+  Module        = "[MOD]",
+  Namespace     = "[NSP]",
+  Package       = "[PKG]",
+  Class         = "[CLS]",
+  Method        = "[MTH]",
+  Property      = "[PRP]",
+  Field         = "[FLD]",
+  Constructor   = "[CTR]",
+  Enum          = "[ENU]",
+  Interface     = "[INT]",
+  Function      = "[FUN]",
+  Variable      = "[VAR]",
+  Constant      = "[CST]",
+  String        = "[STR]",
+  Number        = "[NUM]",
+  Boolean       = "[BOL]",
+  Array         = "[ARR]",
+  Object        = "[OBJ]",
+  Key           = "[KEY]",
+  Null          = "[NUL]",
+  EnumMember    = "[EMB]",
+  Struct        = "[STC]",
+  Event         = "[EVT]",
+  Operator      = "[OPR]",
+  TypeParameter = "[TPR]",
+}
 
 local function config_aerial()
 	require("aerial").setup({
@@ -19,23 +47,24 @@ local function config_aerial()
 			placement = "edge",
 		},
 		show_guides = true,
-		nerd_font = "auto",
-		filter_kind = {
-			"Class",
-			"Constant",
-			"Constructor",
-			"Enum",
-			"EnumMember",
-			"Field",
-			"Function",
-			"Interface",
-			"Method",
-			"Module",
-			"Namespace",
-			"Package",
-			"Property",
-			"Struct",
-		},
+		nerd_font = "true",
+		-- filter_kind = {
+		-- 	"Class",
+		-- 	"Constant",
+		-- 	"Constructor",
+		-- 	"Enum",
+		-- 	"EnumMember",
+		-- 	"Field",
+		-- 	"Function",
+		-- 	"Interface",
+		-- 	"Method",
+		-- 	"Module",
+		-- 	"Namespace",
+		-- 	"Package",
+		-- 	"Property",
+		-- 	"Struct",
+		-- },
+		icons = icons,
 	})
 end
 
