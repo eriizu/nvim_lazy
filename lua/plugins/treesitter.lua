@@ -14,7 +14,13 @@ local function config_ts()
 		auto_install = true,
 
 		ignore_install = { "sql" },
-		indent = { enable = false },
+		indent = { enable = function(lang, buf)
+			if (lang == "javascript") then
+				return true
+			end
+			return false
+		end
+		},
 		highlight = {
 			enable = true,
 
