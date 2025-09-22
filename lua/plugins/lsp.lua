@@ -30,7 +30,7 @@ return {
 		dependencies = { "mason-org/mason.nvim" },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
+				ensure_installed = { "lua_ls", "ts_ls" }, -- make sure ts_ls is installed
 				automatic_enable = {
 					exclude = {
 						"rust_analyzer"
@@ -140,17 +140,40 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			require("mason-lspconfig").setup({
-				function(server_name)
-					require("lspconfig")[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
+			vim.lsp.config("*", { capabilities = capabilities })
+
+			vim.lsp.config("clangd", {
+				cmd = { "clangd", "--fallback-style=WebKit" },
 			})
-			vim.lsp.config('clangd', {
-				-- Server-specific settings. See `:help lsp-quickstart`
-				cmd = {"clangd", "--fallback-style=WebKit" } -- Your override
+
+			vim.lsp.config("denols", {
+				workspace_required = true,
+				root_markers = { "deno.json", "deno.jsonc" },
 			})
+
+			vim.lsp.config("ts_ls", {
+				-- The new API supports these fields
+				workspace_required = true,
+				root_markers = {
+					"bun.lock", "bun.lockb",
+					"package.json", "tsconfig.json", "jsconfig.json",
+					"pnpm-lock.yaml", "yarn.lock", "package-lock.json",
+				},
+				-- If you also have deno projects and want to skip them:
+				-- root_dir = function(fname)
+				--   local util = require("lspconfig.util")
+				--   if util.root_pattern("deno.json", "deno.jsonc")(fname) then
+				--     return nil
+				--   end
+				--   return util.root_pattern(
+				--     "bun.lock","bun.lockb","package.json","tsconfig.json","jsconfig.json",
+				--     "pnpm-lock.yaml","yarn.lock","package-lock.json",".git"
+				--   )(fname)
+				-- end,
+			})
+
+			-- Optional if you don’t rely on automatic_enable:
+			-- vim.lsp.enable({ "lua_ls", "ts_ls", "denols", "clangd" })
 		end,
 	},
 	{
