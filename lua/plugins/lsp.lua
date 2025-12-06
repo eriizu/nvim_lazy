@@ -1,18 +1,3 @@
-local function cmp_compare_snippets_last(entry1, entry2)
-	print("hey")
-	local kind1 = entry1:get_kind()
-	local kind2 = entry2:get_kind()
-
-	if kind1 ~= kind2 then
-		local kind_orders = {
-			[cmp.lsp.CompletionItemKind.Snippet] = 100,
-		}
-		local kind1_order = kind_orders[kind1] or 1
-		local kind2_order = kind_orders[kind2] or 1
-		return kind1_order < kind2_order
-	end
-end
-
 return {
 	-- Mason
 	{
@@ -61,6 +46,26 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
+
+			local types = require("cmp.types")
+
+			local function deprioritize_snippet(entry1, entry2)
+				local kind1 = entry1:get_kind()
+				local kind2 = entry2:get_kind()
+				-- If entry1 is NOT a snippet and entry2 IS a snippet, entry1 should come first
+				if kind1 ~= types.lsp.CompletionItemKind.Snippet
+					and kind2 == types.lsp.CompletionItemKind.Snippet
+				then
+					return true
+				end
+				-- If entry1 IS a snippet and entry2 is NOT, entry1 should come after
+				if kind1 == types.lsp.CompletionItemKind.Snippet
+					and kind2 ~= types.lsp.CompletionItemKind.Snippet
+				then
+					return false
+				end
+				-- otherwise keep other comparators’ order
+			end
 
 			cmp.setup({
 				completion = {
@@ -111,12 +116,12 @@ return {
 						cmp.config.compare.offset,
 						cmp.config.compare.exact,
 						cmp.config.compare.score,
+						deprioritize_snippet,
 						cmp.config.compare.recently_used,
-						cmp.config.compare.locality,
-						--		cmp.config.compare.sort_text,
+						cmp.config.compare.kind,
+						cmp.config.compare.sort_text,
 						cmp.config.compare.length,
 						cmp.config.compare.order,
-						cmp_compare_snippets_last,
 					},
 				},
 			})
