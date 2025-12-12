@@ -1,7 +1,7 @@
 return {
 	{
 		"eriizu/gruvbox-material",
-		branch = "custom_v2",
+		branch = "master",
 		lazy = false,
 		enabled = true,
 		config = function()
