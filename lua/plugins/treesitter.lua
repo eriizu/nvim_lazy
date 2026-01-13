@@ -19,6 +19,9 @@ local function config_ts()
 			if (lang == "javascript") then
 				return true
 			end
+			if (lang == "typescript") then
+				return true
+			end
 			return false
 		end
 		},

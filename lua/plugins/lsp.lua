@@ -15,7 +15,7 @@ return {
 		dependencies = { "mason-org/mason.nvim" },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls" }, -- make sure ts_ls is installed
+				ensure_installed = { "lua_ls", "ts_ls", "biome" },
 				automatic_enable = {
 					exclude = {
 						"rust_analyzer"
@@ -175,6 +175,20 @@ return {
 				--     "pnpm-lock.yaml","yarn.lock","package-lock.json",".git"
 				--   )(fname)
 				-- end,
+			})
+
+			vim.lsp.config("html", {
+				capabilities = capabilities,
+				on_attach = function(client, bufnr)
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+				end,
+			})
+
+			vim.lsp.config("biome", {
+				cmd = { "biome", "lsp-proxy" },
+				root_markers = { "biome.json", "biome.jsonc", "package.json", ".git" },
+				capabilities = capabilities,
 			})
 
 			-- Optional if you don’t rely on automatic_enable:
