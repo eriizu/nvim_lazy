@@ -134,6 +134,13 @@ return {
 		lazy = false,
 	},
 
+	-- lazydev (Neovim runtime types for lua_ls)
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {},
+	},
+
 	-- nvim-lspconfig
 	{
 		"neovim/nvim-lspconfig",
@@ -146,6 +153,10 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			vim.lsp.config("*", { capabilities = capabilities })
+
+			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
+			})
 
 			vim.lsp.config("clangd", {
 				cmd = { "clangd", "--fallback-style=WebKit" },
