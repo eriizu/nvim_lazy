@@ -1,6 +1,7 @@
 vim.opt.number = true
 vim.opt.scrolloff = 5
 vim.opt.title = true
+vim.opt.mousescroll  = "ver:1,hor:1"
 vim.opt.breakindent = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
