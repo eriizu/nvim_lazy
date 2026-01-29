@@ -82,6 +82,22 @@ vim.keymap.set("n", "<leader>bc", function()
 	end
 end)
 
+vim.keymap.set("x", "<leader>oa", function()
+	local filepath = vim.fn.expand("%:.")
+	local start_line = vim.fn.line("v")
+	local end_line = vim.fn.line(".")
+	if start_line > end_line then
+		start_line, end_line = end_line, start_line
+	end
+	local ref
+	if start_line == end_line then
+		ref = filepath .. ":" .. start_line
+	else
+		ref = filepath .. ":" .. start_line .. "-" .. end_line
+	end
+	vim.fn.setreg("+", ref)
+end, { desc = "copy file:line ref to clipboard", silent = true })
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'LSP actions',
 	callback = function(event)
