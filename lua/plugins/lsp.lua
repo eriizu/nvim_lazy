@@ -134,13 +134,6 @@ return {
 		lazy = false,
 	},
 
-	-- lazydev (Neovim runtime types for lua_ls)
-	{
-		"folke/lazydev.nvim",
-		ft = "lua",
-		opts = {},
-	},
-
 	-- nvim-lspconfig
 	{
 		"neovim/nvim-lspconfig",
@@ -156,6 +149,21 @@ return {
 
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
+				settings = {
+					Lua = {
+						runtime = { version = "LuaJIT" },
+						diagnostics = {
+							globals = { "vim" },
+						},
+						workspace = {
+							checkThirdParty = false,
+							library = {
+								vim.env.VIMRUNTIME,
+								"${3rd}/luv/library",
+							},
+						},
+					},
+				},
 			})
 
 			vim.lsp.config("clangd", {
