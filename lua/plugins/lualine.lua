@@ -13,15 +13,15 @@ end
 
 local function lualine_config()
 	-- local theme = require("lualine.themes.sonokai")
-	local theme = require("lualine.themes.gruvbox-material")
-
-	-- theme.normal.a.bg = "#9fa0e1"
-	theme.normal.a.bg = "#d3869b"
-	theme.command.a.bg = "#d8a657"
+	-- local theme = require("lualine.themes.auto")
+	--
+	-- -- theme.normal.a.bg = "#9fa0e1"
+	-- theme.normal.a.bg = "#d3869b"
+	-- theme.command.a.bg = "#d8a657"
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = theme,
+			-- theme = theme,
 			component_separators = { left = " ", right = " " },
 			section_separators = { left = " ", right = " " },
 			disabled_filetypes = {

@@ -36,7 +36,8 @@ return {
     --     end
     -- },
     {
-        "sainnhe/sonokai",
+        "eriizu/sonokai",
+        -- dir = "/home/eriizu/Arena/20260221_sonokai_light/sonokai",
         lazy = false,
         enabled = true,
         config = function()
