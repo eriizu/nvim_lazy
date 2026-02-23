@@ -21,7 +21,7 @@ local function lualine_config()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			-- theme = theme,
+			theme = "sonokai",
 			component_separators = { left = " ", right = " " },
 			section_separators = { left = " ", right = " " },
 			disabled_filetypes = {
@@ -64,8 +64,8 @@ local function lualine_config()
 			lualine_x = {
 				{
 					"aerial",
-					cond = is_width_more_than(90)
-
+					colored = false,
+					cond = is_width_more_than(90),
 				}
 			},
 			lualine_y = {
